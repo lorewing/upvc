@@ -345,6 +345,48 @@
 					}
 			
 			}// End getPost	
+                        
+                        function getPostNews($section_id){
+			$this->db->select('*');
+			$this->db->from('post');
+			$this->db->join('post_section', 'post.section_id = post_section.section_id');
+                        $this->db->where('post_section.section_id',$section_id);
+			$this->db->order_by('post_id', 'DESC');
+                       
+			
+			$query = $this->db->get();
+			
+			
+				if($query->num_rows() > 0)
+				{
+					foreach ($query->result() as $row){
+							$data[]=$row;
+						}
+						return $data;
+					}
+			
+			}// End getPostNews
+                        
+                        function getPostServices($section_id){
+			$this->db->select('*');
+			$this->db->from('post');
+			$this->db->join('post_section', 'post.section_id = post_section.section_id');
+                        $this->db->where('post.section_id !=', $section_id);
+			$this->db->order_by('post_id', 'DESC');
+                       
+			
+			$query = $this->db->get();
+			
+			
+				if($query->num_rows() > 0)
+				{
+					foreach ($query->result() as $row){
+							$data[]=$row;
+						}
+						return $data;
+					}
+			
+			}// End getPostServices
 			
 			function editTable($table_name,$where_id,$id){
 			$query = $this->db->get_where($table_name, array($where_id => $id));

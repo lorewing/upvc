@@ -23,10 +23,15 @@
 							echo $error;
 							}
 						?>
-                                       
+                             
                              <div class="form-group"> 
-                  <label><?php echo lang('Title_en') ; ?></label>
-						<?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'class' => 'form-control spinner','placeholder' => lang('Title_en'), 'value' => set_value('section_name_en'))); ?>
+                                <label><?php echo lang('Title_ar') ; ?></label>
+				<?php echo form_input(array('name' => 'section_name_ar', 'id' => 'section_name_ar', 'class' => 'form-control spinner','placeholder' => lang('Title_ar'), 'value' => set_value('section_name_ar'))); ?>
+                             </div>
+                             <div class="form-group"> 
+                                 
+                                <label><?php echo lang('Title_en') ; ?></label>
+				<?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'class' => 'form-control spinner','placeholder' => lang('Title_en'), 'value' => set_value('section_name_en'))); ?>
                              </div>
                             
                            <div class="form-group">
@@ -48,14 +53,19 @@
                             </div>
                             
                              <div class="form-group"> 
-                        <label><?php echo lang('Section_Cover_Image') ; ?></label>
-                  <?php echo form_upload(array('name' => 'userfile', 'id' => 'image'));	?>
+                                 <label><?php echo lang('Section_Cover_Image') ; ?></label>
+                                <?php echo form_upload(array('name' => 'userfile', 'id' => 'image'));	?>
 
                              </div>
-		
+                            
+                            <div class="form-group"> 
+                                <label><?php echo lang('Desc_ar') ; ?></label>
+				<?php echo form_textarea(array('name' => 'section_desc_ar', 'id' => 'section_desc_ar', 'placeholder' => lang('Desc_ar'), 'value' => set_value('section_desc_ar'))); ?>
+					
+                             </div>
                              <div class="form-group"> 
-                  <label><?php echo lang('Desc_en') ; ?></label>
-						<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => lang('Desc_en'), 'value' => set_value('section_desc_en'))); ?>
+                                <label><?php echo lang('Desc_en') ; ?></label>
+				<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => lang('Desc_en'), 'value' => set_value('section_desc_en'))); ?>
 					
                              </div>
                      

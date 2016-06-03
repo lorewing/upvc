@@ -59,10 +59,10 @@
 		{
 			
 			//Form Validation
-			//$this->form_validation->set_rules('section_name_ar', 'Section Title Arabic', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('section_name_ar', 'Section Title Arabic', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('section_name_en', 'Section Title English', 'trim|xss_clean');
 			//$this->form_validation->set_rules('section_desc_ar', 'Section Desc. Arabic', '');
-			$this->form_validation->set_rules('section_desc_en', 'Section Desc. English', 'trim|xss_clean');
+			//$this->form_validation->set_rules('section_desc_en', 'Section Desc. English', 'trim|xss_clean');
 			//$this->form_validation->set_rules('meta_keywords', 'Meta Keywords', 'trim|xss_clean');
 			//$this->form_validation->set_rules('meta_description', 'Meta Description', 'trim|xss_clean');
 			//$this->form_validation->set_rules('url', 'url', 'trim|xss_clean');
@@ -82,9 +82,9 @@
 							$data = array(
 							   'section_name_en' 		=> $this->input->post('section_name_en'),
                                                             'section_parent_id' => $this->input->post('section_parent_id'),
-							//   'section_name_ar' 	=> $this->input->post('section_name_ar'), 
+							   'section_name_ar' 	=> $this->input->post('section_name_ar'), 
 							   'section_desc_en' 		=> $this->input->post('section_desc_en'),
-							//   'section_desc_ar' 	=> $this->input->post('section_desc_ar'), 
+							   'section_desc_ar' 	=> $this->input->post('section_desc_ar'), 
 							//   'meta_keywords' 		=> $this->input->post('meta_keywords'),
 							 //  'meta_description' 	=> $this->input->post('meta_description'), 
 							   'active' 	=> $this->input->post('active'), 
@@ -146,9 +146,9 @@
 					$data = array(
 					   'section_name_en' 		=> $this->input->post('section_name_en'),
                                             'section_parent_id' => $this->input->post('section_parent_id'),
-                                        //   'section_name_ar' 	=> $this->input->post('section_name_ar'), 
+                                           'section_name_ar' 	=> $this->input->post('section_name_ar'), 
                                            'section_desc_en' 		=> $this->input->post('section_desc_en'),
-                                        //   'section_desc_ar' 	=> $this->input->post('section_desc_ar'), 
+                                          'section_desc_ar' 	=> $this->input->post('section_desc_ar'), 
                                         //   'meta_keywords' 		=> $this->input->post('meta_keywords'),
                                          //  'meta_description' 	=> $this->input->post('meta_description'), 
                                            'active' 	=> $this->input->post('active'), 
@@ -518,10 +518,10 @@
 			
 			//Form Validation
 			//Form Validation
-			//$this->form_validation->set_rules('section_name_ar', 'Section Title Arabic', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('section_name_ar', 'Section Title Arabic', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('section_name_en', 'Section Title English', 'trim|xss_clean');
 			//$this->form_validation->set_rules('section_desc_ar', 'Section Desc. Arabic', '');
-			$this->form_validation->set_rules('section_desc_en', 'Section Desc. English', 'trim|xss_clean');
+			//$this->form_validation->set_rules('section_desc_en', 'Section Desc. English', 'trim|xss_clean');
 			//$this->form_validation->set_rules('meta_keywords', 'Meta Keywords', 'trim|xss_clean');
 			//$this->form_validation->set_rules('meta_description', 'Meta Description', 'trim|xss_clean');
 			//$this->form_validation->set_rules('url', 'url', 'trim|xss_clean');
@@ -571,8 +571,10 @@
 						$this->image_lib->resize();
 						
 						$data = array(
-							   'section_name_en' 		=> $this->input->post('section_name_en'),
+							    'section_name_en' 		=> $this->input->post('section_name_en'),
+                                                            'section_name_ar' 		=> $this->input->post('section_name_ar'),
                                                             'section_parent_id' => $this->input->post('section_parent_id'),
+                                                            'section_desc_ar' 		=> $this->input->post('section_desc_ar'),
                                                             'section_desc_en' 		=> $this->input->post('section_desc_en'),
                                                             'active' 	=> $this->input->post('active'), 
                                                             'author' 		=> $this->session->userdata('current_user'), 
@@ -591,7 +593,9 @@
 					{
 						$data = array(
 							    'section_name_en' 		=> $this->input->post('section_name_en'),
+                                                            'section_name_ar' 		=> $this->input->post('section_name_ar'),
                                                             'section_parent_id' => $this->input->post('section_parent_id'),
+                                                            'section_desc_ar' 		=> $this->input->post('section_desc_ar'),
                                                             'section_desc_en' 		=> $this->input->post('section_desc_en'),
                                                             'active' 	=> $this->input->post('active'), 
                                                             'author' 		=> $this->session->userdata('current_user'), 

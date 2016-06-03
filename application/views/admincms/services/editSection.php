@@ -18,10 +18,12 @@
 					 <?php foreach($rows as $r) : ?>
                     	  <?php 
 								$section_id = $r->section_id;
-								$section_name_en = $r->section_name_en;
+								$section_name_ar = $r->section_name_ar;
+                                                                $section_name_en = $r->section_name_en;
 								$section_cover = $r->section_cover;
 								$section_cover_thumb = $r->section_cover_thumb;
-								$section_desc_en = $r->section_desc_en;
+								$section_desc_ar = $r->section_desc_ar;
+                                                                $section_desc_en = $r->section_desc_en;
 								$class_name = $r->class_name;
 								$active = $r->active;
 								$url = $r->url;
@@ -42,9 +44,14 @@
 						?>
                             
                            <div class="form-group"> 
-                  <label><?php echo lang('Title_en') ; ?></label>
-						<?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'class' => 'form-control spinner','placeholder' => lang('Title_en'), 'value' => $section_name_en)); ?>
-                             </div>	
+                             <label><?php echo lang('Title_ar') ; ?></label>
+			     <?php echo form_input(array('name' => 'section_name_ar', 'id' => 'section_name_ar', 'class' => 'form-control spinner','placeholder' => lang('Title_ar'), 'value' => $section_name_ar)); ?>
+                             </div>
+                 
+                          <div class="form-group"> 
+                             <label><?php echo lang('Title_en') ; ?></label>
+			     <?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'class' => 'form-control spinner','placeholder' => lang('Title_en'), 'value' => $section_name_en)); ?>
+                           </div>
                  
                             <div class="form-group">
 				<label><?php echo lang('Section'); ?></label>
@@ -71,10 +78,16 @@
                             </div>
                             
                             <div class="form-group"> 
-                  <label><?php echo lang('Desc_en') ; ?></label>
-						<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => lang('Desc_en'), 'value' => $section_desc_en )); ?>
+                                <label><?php echo lang('Desc_ar') ; ?></label>
+				<?php echo form_textarea(array('name' => 'section_desc_ar', 'id' => 'section_desc_ar', 'placeholder' => lang('Desc_ar'), 'value' => $section_desc_ar )); ?>
 					
-                             </div>
+                            </div>
+                            
+                            <div class="form-group"> 
+                                <label><?php echo lang('Desc_en') ; ?></label>
+				<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => lang('Desc_en'), 'value' => $section_desc_en )); ?>
+					
+                            </div>
                      
                     <div class="form-group"> 
                          <label><?php echo lang('Class Name') ; ?></label>

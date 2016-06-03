@@ -8,6 +8,7 @@ $lang['Desc_ar'] = 'Arabic Description';
 $lang['Desc_en'] = 'English Description';
 $lang['Add Post'] = 'Add Post';
 $lang['Add Section'] = 'Add Section';
+$lang['Add Services'] = 'Add Services';
 $lang['Add a Services Section'] = 'Add a Services Section';
 $lang['Please Select your Section'] = 'Please Select your Section';
 $lang['Section'] = 'Section*';

@@ -62,7 +62,7 @@
                                 <span></span>
                              </label>
                          </div>     
-                             
+                    <input type="hidden" name="section_id" value="26" />
                              <div class="form-actions">
                                   <?php 
                                     echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => lang('Add Post'), 'class' => 'btn green uppercase'));

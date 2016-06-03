@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 
 			<div class="portlet-body">
-		<h3 class="page-title"> <?php echo lang('Add Post') ; ?></h3>
+		<h3 class="page-title"> <?php echo lang('Add Services') ; ?></h3>
                  <hr>
                    		<?php echo form_open_multipart('/admincms/post/add_post'); 
 
@@ -40,13 +40,13 @@
                        		<select name="section_id" class="form-control input-large">
                             <option value=""><?php echo lang('Please Select your Section'); ?></option>
                             <?php
-                        	$query = $this->db->get('post_section');
+                        	$query = $this->db->get_where('post_section',array('section_type'=>'services'));
 							
 
                                     foreach ($query->result() as $row)
 
                                     {?>
-                                             <option value="<?= $row->section_id;?>"><?= $row->section_name_en;?></option>				
+                                             <option value="<?php echo $row->section_id;?>"><?php echo $row->section_name_en;?></option>				
                                     <?php } // end for each
 				?>
 							</select>

@@ -202,7 +202,7 @@
 							$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							  'section_id' => '26', 
+							   'section_id' => $this->input->post('section_id'), 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'active' 	=> $this->input->post('active'), 
@@ -268,7 +268,7 @@
 					$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							  'section_id' => '26', 
+							  'section_id' => $this->input->post('section_id'), 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'image_name' 		=> $file_data['file_name'],
@@ -454,8 +454,13 @@
 		function view_post()
 		{	
 			
-			$data['site_title'] = "View Post";	
-			$data['post'] = $this->data_model->getPost();
+			$data['site_title'] = "View Post";
+                        $section_id = $this->uri->segment('4');
+                        if ($section_id ==26){
+			$data['post'] = $this->data_model->getPostNews(26);
+                        }else{
+                            $data['post'] = $this->data_model->getPostServices(26);
+                        }
 			$this->load->view('admincms/post/view_post', $data);
 
 			} // end function view_post

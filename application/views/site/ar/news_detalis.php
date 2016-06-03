@@ -23,15 +23,17 @@
         <div class="wrapper">
            
             <div class="pull-right">
-                <span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
-                    <a itemprop="url" class="current-page">
-                        <span itemprop="title">من نحن </span>
-                    </a>
-                </span>
-               &nbsp;&rsaquo;&nbsp;
+              
+               
                 <span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
                     <a itemprop="url" href="<?php echo base_url(); ?>" >
                         <span itemprop="title">الرئيسية</span>
+                    </a>
+                </span>
+               &nbsp;&rsaquo;&nbsp;
+                 <span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+                    <a itemprop="url" class="current-page">
+                        <span itemprop="title">من نحن </span>
                     </a>
                 </span>
             </div>

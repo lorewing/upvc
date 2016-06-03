@@ -31,7 +31,7 @@
                                                 <th class="all"><?php echo lang('Post Title En'); ?></th>
                                                 <!-- <th class="min-phone-l">Post Title Ar</th>-->
                                                 <!-- <th class="min-tablet">Category Name En</th>-->
-                                                <th class="none"><?php echo lang('Category Name En'); ?></th>
+                                                <th class="min-tablet"><?php echo lang('Category Name En'); ?></th>
                                                 <th class="all"><?php echo lang('Edit'); ?></th>
                                                 <th class="all"><?php echo lang('Delete'); ?></th>
                                             </tr>

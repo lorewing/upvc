@@ -50,8 +50,8 @@ var kopa_variable = {
                 "EMAIL": "Please enter a valid email"
             },
             "url": {
-                "REQUIRED": "Please enter your url",
-                "URL": "Please enter a valid url"
+                "REQUIRED": "http://euroupvc.com/",
+                "URL": "http://euroupvc.com/"
             },
             "message": {
                 "REQUIRED": "Please enter a message",
@@ -64,7 +64,7 @@ var kopa_variable = {
         }
     },
     "url": {
-        "template_directory_uri":""
+        "template_directory_uri":"http://euroupvc.com/"
     }
 };
 

@@ -51,7 +51,7 @@
               <div class="widget kopa-mission-carousel-widget">
                 <div class="owl-carousel owl-carousel-7">
                   <div class="item">
-                    <div class="entry-thumb"> <img src="<?php echo base_url(); ?>site_view/images/one-post/2.jpg" alt=""> </div>
+                      <div class="entry-thumb"> <img class="img-rounded pull-left" src="<?php echo base_url(); ?>private/post/<?php echo $row->image_name ;?>" width="535" height="329" alt="<?php echo $row->title_ar; ?>"> </div>
                   </div>
                
                 </div>

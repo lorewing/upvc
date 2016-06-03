@@ -165,6 +165,8 @@
     <script src="<?php echo base_url(); ?>site_view/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>site_view/js/custom.js" charset="utf-8"></script>
     
+    
+    
 </body>
 
 

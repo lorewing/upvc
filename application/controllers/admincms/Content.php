@@ -17,8 +17,8 @@
 			$this->load->library('session');
 
 			$this->load->model('membership_model');
-
-			$this->is_logged_in();
+                        $this->lang->load('english_lang', 'english');
+                        $this->is_logged_in();
 
 		    $this->membership_model->getKeywords('Content'); // load keywords for each page based on controler name
 
@@ -92,7 +92,7 @@
 
 			$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required');
 
-			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]');
+			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]|alpha_dash_space');
 
 
 
@@ -192,7 +192,7 @@
 
 			$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required');
 
-			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]');
+			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]|alpha_dash_space');
 
 
 
@@ -839,11 +839,11 @@
 
 			//Form Validation
 
-			$this->form_validation->set_rules('title', 'Page Title', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('title', 'Page Title', 'trim|required');
 
 			$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required');
 
-			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]');
+			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]|alpha_dash_space');
 
 	
 
@@ -1576,11 +1576,11 @@
 
 			//Form Validation
 
-			$this->form_validation->set_rules('title', 'Page Title', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('title', 'Page Title', 'trim|required');
 
 			$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required');
 
-			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]');
+			//$this->form_validation->set_rules('main_content', 'Main Content', 'trim|required|max_length[300000]|alpha_dash_space');
 
 
 
@@ -1765,7 +1765,7 @@
 
 			
 
-			$this->form_validation->set_rules('project_name', 'Project Name', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('project_name', 'Project Name', 'trim|required');
 
 			
 

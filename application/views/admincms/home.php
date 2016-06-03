@@ -1,4 +1,4 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
 	<div id="content_container" class="row">
 		
@@ -12,4 +12,4 @@
 	
 	</div>
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

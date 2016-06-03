@@ -19,6 +19,7 @@
 			$this->load->library('session');
 
 			$this->load->model('membership_model');
+                         $this->lang->load('english_lang', 'english');
 
 			$this->is_logged_in();
 

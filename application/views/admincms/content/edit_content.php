@@ -1,15 +1,10 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
 
 
 <script type="text/javascript" src="<?php echo base_url(); ?>Jcrop/js/jquery.Jcrop.js"></script>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>Jcrop/css/jquery.Jcrop.css">
-
-
-
-
-
 
 
 <script type="text/javascript">
@@ -482,92 +477,40 @@ jQuery(function($){
 
 
 
-			<div class="row" id='admin_section'>
-
-				
-
-    <div id="main_content_div" class="columns large-9 left">
-
-		
-
-			<div id="form_add">
-
-            <br/>
+			<div class="row">
+                  
+            <div class="col-md-12">
+                
+			<div class="portlet-body">
+		<h3 class="page-title"> <?php echo lang('Update Content') ; ?></h3>
+                 <hr>
 
 				<?php 
+                                        if(!empty($update_record)){
+                        		echo $update_record;
+            				}
+				?> 
 
-								
+				
+                         <?php 
+                            $attributes = array('name' => 'add_content','id'=>'add_content','class'=>'');
+                            echo form_open_multipart('admincms/content/update',$attributes);
 
-								if(!empty($update_record)){
+                                    //add_content
 
-							echo $update_record;
+                            echo validation_errors('<p class=\'error\'>');
 
-							}
+                            echo $this->session->flashdata('message');
 
-					?> 
+                                    if(!empty($error)){
+                                        echo $error;
+                                            }
+                        ?>
 
-				<fieldset>
-
-				 
-
-                    
-
-					<legend>Edit Content</legend>
-
-					
-
-			
-
-                         
-
-                        
-
-                         <?php //echo form_open('/admincms/content/update_content/'); 
-
-
-
-
-
-//echo form_open('admincms/content/add_content' );
-
-						
-
-					$attributes = array('name' => 'add_content','id'=>'add_content','class'=>'');
-
-	  	echo form_open_multipart('admincms/content/update',$attributes);
-
-						//add_content
-
-						
-
-
-
-
-
-                        echo validation_errors('<p class=\'error\'>');
-
-						
-
-						echo $this->session->flashdata('message');
-
-						if(!empty($error)){
-
-							echo $error;
-
-							}
-
-						?>
-
-						
-
-                        
 
                          <?php foreach($rows as $row) : ?>
 
-
-
                     	  <?php 
-
 								{
 
 									$id 				= $row->id;
@@ -605,50 +548,49 @@ jQuery(function($){
                         <input name="id" id="id" type="hidden" value="<?= $id;?>" />
 
                         
-				<label>Title Arabic*</label>
+				<div class="form-group">             
+                                 <label><?php echo lang('Title_ar') ; ?></label>
                         <?php
-
-						
-						echo form_input(array('name' => 'title_ar', 'id' => 'title_ar' , 'placeholder' => 'Page Title Arabic', 'value' => $title_ar ));
-						?>
-                        <label>Title English*</label>
+                        echo form_input(array('name' => 'title_ar', 'id' => 'title_ar' ,'class' => 'form-control spinner', 'placeholder' => 'Page Title Arabic', 'value' => $title_ar ));
+					?>
+                                   </div>
+                      <div class="form-group">             
+                     <label><?php echo lang('Page Title English') ; ?></label>
                         <?php
-						echo form_input(array('name' => 'title', 'id' => 'title' , 'placeholder' => 'Page Title English', 'value' => $title ));
+						echo form_input(array('name' => 'title','class' => 'form-control spinner', 'id' => 'title' , 'placeholder' => 'Page Title English', 'value' => $title ));
 
 						
 
-						echo form_input(array('name' => 'call_name', 'id' => 'call_name', 'value' => $call_name, 'disabled' => 'disabled' ));
+						echo form_input(array('name' => 'call_name','class' => 'form-control spinner', 'id' => 'call_name', 'value' => $call_name, 'disabled' => 'disabled' ));
 
 						
 
 						?>
 
-                        
-						<label>Page Main Copy Arabic</label>
+                          </div>
+						<div class="form-group">             
+                                              <label><?php echo lang('Page Main Copy Arabic') ; ?></label>
 
-						<p><?php echo form_textarea(array('name' => 'main_content_ar', 'id' => 'main_content_ar', 'placeholder' => 'Page Main Copy Arabic', 'value' => $content_ar)); ?></p>
-                        
-						<label>Page Main Copy English</label>
+						<p><?php echo form_textarea(array('name' => 'main_content_ar','class' => 'form-control spinner', 'id' => 'main_content_ar', 'placeholder' => 'Page Main Copy Arabic', 'value' => $content_ar)); ?></p>
+                                                </div>
+						<div class="form-group">             
+                                                 <label><?php echo lang('Page Main Copy Enlish') ; ?></label>
 
-						<p><?php echo form_textarea(array('name' => 'main_content', 'id' => 'main_content', 'placeholder' => 'Page Main Copy', 'value' => $content)); ?></p>
+						<p><?php echo form_textarea(array('name' => 'main_content','class' => 'form-control spinner', 'id' => 'main_content', 'placeholder' => 'Page Main Copy', 'value' => $content)); ?></p>
+
+						  </div>
 
 						
 
-						
-
-						<label>Associated with</label>
+						 <div class="form-group">             
+                            <label><?php echo lang('Associated with') ; ?></label>
 
 						<p>
 
 							<select name="side_bar">
-
-							
-
-								<option><?php echo $side_bar; ?></option>
+                                                        <option><?php echo $side_bar; ?></option>
 
 								<option value="">None</option>	
-
-						
 
 								<?php
 
@@ -660,43 +602,31 @@ jQuery(function($){
 
 								$query = $this->db->get('content');
 
-								
-
 								foreach ($query->result() as $row) {
 
 								?>
 
-						
-
 								<option><?php echo $row->title; } ?></option>
-
-								
+	
 
 							</select>
-
+                                    </div>
 							
 
-						</p>
+						<div class="form-group">             
+                            <label><?php echo lang('Change link') ; ?></label>
+
+							<?php echo form_input(array('name' => 'link','class' => 'form-control spinner', 'id' => 'link', 'placeholder' => 'Change link', 'value' => $link)); ?>
+
+                                                </div>
 
 						
 
-						<label>Change link</label>
+						<div class="form-group">             
+                            <label><?php echo lang('Position') ; ?></label>
+							<?php echo form_input(array('name' => 'position','class' => 'form-control spinner', 'id' => 'position', 'value' => $order_by, 'placeholder' => 'Position')) ?>	
 
-						<p>
-
-							<?php echo form_input(array('name' => 'link', 'id' => 'link', 'placeholder' => 'Change link', 'value' => $link)); ?>
-
-						</p>
-
-						
-
-						<label>Position</label>
-
-						<p>
-
-							<?php echo form_input(array('name' => 'position', 'id' => 'position', 'value' => $order_by, 'placeholder' => 'Position')) ?>	
-
-						</p>
+                                                </div>
 
 						
 
@@ -706,15 +636,18 @@ jQuery(function($){
 
 						
 
-						<label>Page Keywords</label>
+						<div class="form-group">             
+                                <label><?php echo lang('Page Keywords') ; ?></label>
 
-						<p><?php echo form_textarea(array('name' => 'seo_keywords', 'id' => 'seo_keywords', 'placeholder' => 'Page Keywords', 'value' => $seo_keywords)); ?></p>
-
+						<?php echo form_textarea(array('name' => 'seo_keywords','class' => 'form-control spinner', 'id' => 'seo_keywords', 'placeholder' => 'Page Keywords', 'value' => $seo_keywords)); ?>
+                                                </div>
 						
 
-						<label>Page Description</label>
+						 <div class="form-group">             
+                                    <label><?php echo lang('Page Description') ; ?></label>
 
-						<p><?php echo form_textarea(array('name' => 'seo_description', 'id' => 'seo_description', 'placeholder' => 'Page Description', 'value' => $seo_description));?></p>
+						<?php echo form_textarea(array('name' => 'seo_description','class' => 'form-control spinner', 'id' => 'seo_description', 'placeholder' => 'Page Description', 'value' => $seo_description));?>
+                                                 </div>
 
 						
 
@@ -807,20 +740,12 @@ jQuery(function($){
                         
 
                         
-
+                                        <div class="form-group"> 
 						<?php
-
-						
-
-						echo form_submit(array('name' => 'save_content','id' => 'save_content', 'value' => 'Save Content', 'class' => 'button radius right small'));
-
-						
-
-						?>
-
+                                                	echo form_submit(array('name' => 'save_content','id' => 'save_content', 'value' => 'Save Content', 'class' => 'btn green uppercase '));
+                                        	?>
+                                        </div>
 				
-
-				</fieldset>
 
 			
 
@@ -829,8 +754,9 @@ jQuery(function($){
 		
 
 		</div>
+</div>
 
-
+</div>
 
 <script src="<?= base_url(); ?>admin_view/js/jquery.dataTables.min.js"></script>
 
@@ -852,5 +778,4 @@ $(document).ready(function() {
 
     
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
-
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

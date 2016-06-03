@@ -1,34 +1,24 @@
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
 
-<?php $this->load->view("admincms/includes/top.php"); ?>
 
-<script type="text/javascript" >
-
-// for add and update widget at home page
-function setPermission(menu_id){
-	
-			if ($("#menu_"+menu_id).is(':checked') == true) {
-				var is_active=1;
-         }else {
-				var is_active=0;
-         }
-						// BASE_PATH is define in top.php 
-			jQuery.post(BASE_PATH+"admincms/roles/setPermissionStatus",{menu_id:menu_id,is_active:is_active,role_id:'<?php echo $role_id; ?>'},function(message){
-					$("#msg_menu").show();
-					$("#msg_menu").html("<div class='alert alert-success'><a href='#' data-dismiss='alert' class='close'>×</a><strong> Record Successfully Saved</div>");
-			});
-}
-//Ahmed
-</script>   
-
-			<div class="row" id='admin_section'>
-				
-    <div id="content_container" class="row">
-		
-		<div class="columns large-12">
-			
-			
-			
+ <h3 class="page-title"><?php echo lang('Set Permission') ; ?> 
+      <hr>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                  
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-globe"></i><?php echo lang('Set Permission') ; ?></div>
+                                    <div class="tools"> </div>
+                                </div>
+                                <div class="portlet-body">
 			<?php echo $this->session->flashdata('user_updated'); ?>
 			<div class="row-fluid"> 
     <!-- Side Navigation -->
@@ -101,7 +91,7 @@ $main_menu_status=$this->general->checkRoleMenu($parent_menu->mst_menuid,$role_i
                  <?php }?>  <div class="clr"></div><?php }?>
                   <div class="form-actions">
                     <input type="hidden"  id="role_id" name="role_id" value="<?php echo encodeId($role_id); ?>" />
-                    <button type="button" class="btn btn-danger" onClick="javascript:window.location.href='<?php echo base_url()?>admincms/roles'">Back To Role</button>
+                    <button type="button" class="btn green uppercase" onClick="javascript:window.location.href='<?php echo base_url()?>admincms/roles'"><?php echo lang('Back To Role'); ?></button>
                   </div>
                 </div>
             </div>
@@ -122,13 +112,27 @@ $main_menu_status=$this->general->checkRoleMenu($parent_menu->mst_menuid,$role_i
 	</div>
 
 <script src="<?= base_url(); ?>admin_view/js/jquery.dataTables.min.js"></script>
-<script>		
-$(document).ready(function() {
-	$('#example').dataTable();
-} );
 
-</script>
+
+<script type="text/javascript" >
+
+// for add and update widget at home page
+function setPermission(menu_id){
+	
+			if ($("#menu_"+menu_id).is(':checked') == true) {
+				var is_active=1;
+         }else {
+				var is_active=0;
+         }
+						// BASE_PATH is define in top.php 
+			jQuery.post(BASE_PATH+"admincms/roles/setPermissionStatus",{menu_id:menu_id,is_active:is_active,role_id:'<?php echo $role_id; ?>'},function(message){
+					$("#msg_menu").show();
+					$("#msg_menu").html("<div class='alert alert-success'><a href='#' data-dismiss='alert' class='close'>×</a><strong> Record Successfully Saved</div>");
+			});
+}
+//Ahmed
+</script>   
  
  
     
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

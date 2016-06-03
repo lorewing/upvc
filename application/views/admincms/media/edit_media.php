@@ -1,49 +1,20 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
 
-
-	<div id="content_container" class="row">
-
-		
-
-		<div class="columns large-12">
-
-		
-
-			<p>Welcome to the <?php echo  $this->config->item('site_title'); ?> Content Management System.</p>
-
-			
-
-		
-
-		</div>
-
-        
-
-        	<div id="content_container" class="row">
-
-		
-
-		
-
-		
-
-		<div id="main_content_section" class="columns large-12 left">
-
-		
-
-			<div id="form_add">
-
-		
-
-				<fieldset>
-
-				
-
-					<legend>Edit Media</legend>
-
-					
-
+<div class="row">
+                  
+            <div class="col-md-12">
+                
+			<div class="portlet-body">
+		<h3 class="page-title"><?php echo lang('Edit Media'); ?> </h3>
+                <?php 
+								
+								if(!empty($update_record)){
+							echo $update_record;
+							}
+					?> 
+                
+                 <hr>
                       <?php foreach($rows as $r) : ?>
 
                     	  <?php 
@@ -53,8 +24,10 @@
 								$group_id = $r->group_id;
 
 								$title = $r->title;
+                                                                $title_en = $r->title_en;
 
 								$desc = $r->desc;
+                                                                $desc_en = $r->desc_en;
 
 								$video_url = $r->video_url;
 
@@ -108,32 +81,40 @@
 
 						?>
 
-						<label>Media Title</label>
+						 <div class="form-group">   
+						<label><?php echo lang('Title_ar') ; ?></label>
 
-						<?php echo form_input(array('name' => 'title', 'id' => 'title', 'placeholder' => 'Media Title', 'value' => $title)); ?>
+						<?php echo form_input(array('name' => 'title','class' => 'form-control spinner', 'id' => 'title', 'placeholder' => 'Media Title', 'value' => $title)); ?>
 
-						
+                                                 </div>
+                 
+                                    <div class="form-group">   
+						<label><?php echo lang('Title_en') ; ?></label>
 
-                         <input name="media_id" type="hidden" value="<?php echo $media_id?>" />
+						<?php echo form_input(array('name' => 'title_en','class' => 'form-control spinner', 'id' => 'title_en', 'placeholder' => 'Media Title', 'value' => $title_en)); ?>
 
+                                                 </div>
+                 
+
+                         <input name="media_id" type="hidden" value="<?PHP echo $media_id; ?>" />
+       
+                         <div class="form-group">
+                                <img src="<?php echo base_url(); ?>private/media/<?php echo $media_name; ?>" width="250" height="250"></p>
+                              <p>
+                                <?php echo form_upload(array('name' => 'userfile', 'id' => 'image'));	?>
+                            </div>
                         
-
-                        <label>Upload Image</label>
-                        
-                        <img src="<?php echo base_url(); ?>private/media/<?php echo $media_name; ?>" width="250" height="250"></p>
-
-
-                        <div class="input-group input-switch-group"><input type="file" name="userfile"  class="" id="userfile" multiple />
-
-
-
+                 </div>
+                          <div class="form-group"> 
 						<label>Media Group*</label>
 
                        		<select name="group_id">
 
                             <option value=""> Please Select Your Media Group</option>
 
-                            <?php $query = $this->db->get('media_group');
+                            <?php
+
+                        	$query = $this->db->get('media_group');
 
 							
 
@@ -143,7 +124,7 @@
 
 									{?>
 
-										 <option value="<?php echo  $row->group_id;?>" <?php if ($row->group_id === $group_id) echo 'selected="selected"'?>><?php echo  $row->group_name;?></option>				
+										 <option value="<?= $row->group_id;?>" <?php if ($row->group_id === $group_id) echo 'selected="selected"'?>><?= $row->group_name;?></option>				
 
 									<?php } // end for each
 
@@ -152,10 +133,8 @@
 							</select>
 
 					   
-
-                  <br />
-
-
+                          </div>
+                  <div class="form-group"> 
 
                        <label>Type*</label>
 
@@ -173,61 +152,39 @@
 
 					   
 
-                        
-
-					   
-
-                  <label>Media Description</label>
+                  </div>  
+ <div class="form-group"> 
+     <label><?php echo lang('Desc_ar'); ?></label>
 
 						<?php echo form_textarea(array('name' => 'desc', 'id' => 'desc', 'placeholder' => 'Media Description', 'value' => $desc)); ?>
+ </div>
+                          <div class="form-group"> 
+     <label><?php echo lang('Desc_en'); ?></label>
 
-						<br />
-
+						<?php echo form_textarea(array('name' => 'desc_en', 'id' => 'desc_en', 'placeholder' => 'Media Description', 'value' => $desc_en)); ?>
+ </div>
+                         
                         
+                          <div class="form-group"> 
+                        <label>Related Tag</label>
 
-                        
+						<?php echo form_input(array('name' => 'related_tag','class'=>'form-control spinner', 'id' => 'related_tag', 'placeholder' => 'Related Tag', 'value' => $related_tag)); ?>
 
-                        <label><br />
-
-                        Related Tag</label>
-
-						<?php echo form_input(array('name' => 'related_tag', 'id' => 'related_tag', 'placeholder' => 'Related Tag', 'value' => $related_tag)); ?>
-
-						
-
+                          </div>			
+ <div class="form-group"> 
                          <label>Video URL</label>
 
-                        <?php echo form_input(array('name' => 'video_url', 'id' => 'video_url', 'placeholder' => 'Video URL', 'value' => $video_url)); ?>
+                         
+                        <?php echo form_input(array('name' => 'video_url','class'=>'form-control spinner', 'id' => 'video_url', 'placeholder' => 'Video URL', 'value' => $video_url)); ?>
+ </div>
+				 <div class="form-group"> 		<?php
 
-
-
-						<br />
-
-                        
-
-                        				      
-
-
-
-						<?php
-
-						
-
-						echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => 'Update Media', 'class' => 'button radius right small'));
-
-						
+						echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => 'Update Media', 'class' => 'btn green uppercase'));
 
 						echo form_close();
 
-						
-
 						?>
-
-				
-
-				</fieldset>
-
-			
+                          </div>			
 
 			</div>
 
@@ -245,5 +202,5 @@
 
 
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>
 

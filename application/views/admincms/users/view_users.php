@@ -1,35 +1,43 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
-			<div class="row" id='admin_section'>
-				
-    <div id="content_container" class="row">
-		
-		<div class="columns large-12">
-			
-			<ul class="no-bullet inline-list" id="manage_nav">
-				<li><a href="<?php echo base_url(); ?>admincms/users/add_users/"><img src="<?php echo base_url(); ?>admin_view/images/icons/add.png"><span>Add User</span></a></li>
-			</ul>	
-			
+
+
+ <h3 class="page-title"><?php echo lang('View Users') ; ?> 
+      <hr>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                  
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-globe"></i><?php echo lang('View Users') ; ?></div>
+                                    <div class="tools"> </div>
+                                </div>
+                                <div class="portlet-body">
+                                    
+                                
 			<?php echo $this->session->flashdata('user_updated'); ?>
 			
-         
-
-		<table id="example" class="display" cellspacing="0" width="100%">
-                  <thead>
-                    <tr>
-                    
-                	<th>First Name</th>
-                    <th>Last Name</th>
-                    <th>User Name</th>
-                   <th>User Email</th>
-                    <th>Permissions</th>
-                     <th>Active</th>
-                  
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+               
+                      <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_3" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="all"><?php echo lang('First Name'); ?></th>
+                                                <th class="all"><?php echo lang('Last Name'); ?></th>
+                                                <th class="all"><?php echo lang('User Name'); ?></th>
+                                                <th class="all"><?php echo lang('User Email'); ?></th>
+                                                 <th class="all"><?php echo lang('Permissions'); ?></th>
+                                                  <th class="all"><?php echo lang('Active'); ?></th>
+                                                <th class="all"><?php echo lang('Edit'); ?></th>
+                                                <th class="all"><?php echo lang('Delete'); ?></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                   	
 							<?php 
 							if(!empty($users))
@@ -65,22 +73,41 @@
 							?>
 					                   
                   </tbody>
+                                   </tbody>
                                    </table>
-                                   <br />
+                            
 		
-       
-		</div>
-	
-	</div>
-
-<script src="<?= base_url(); ?>admin_view/js/jquery.dataTables.min.js"></script>
-<script>		
+                                </div>
+                            </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                        </div>
+                        
+                    </div>
+            
+ <script>		
 $(document).ready(function() {
-	$('#example').dataTable();
-} );
+	
+} ); //end ready functions
 
+checked=false;
+function checkedAll (frm1) {var aa= document.getElementById('frm1'); if (checked == false)
+{
+checked = true
+}
+else
+{
+checked = false
+}for (var i =0; i < aa.elements.length; i++){ aa.elements[i].checked = checked;}
+} // end checkedAll functions
+
+function con(message) {
+ var answer = confirm(message);
+ if (answer) {
+  return true;
+ }
+
+ return false;
+} //end con functions
 </script>
- 
     
-    
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

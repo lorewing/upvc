@@ -1,24 +1,37 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
-			<div class="row" id='admin_section'>
-				
-    <div id="content_container" class="row">
-		
-		<div class="columns large-12">
-			
-			
-			
+
+
+ <h3 class="page-title"><?php echo lang('View Users') ; ?> 
+      <hr>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                  
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-globe"></i><?php echo lang('View Users') ; ?></div>
+                                    <div class="tools"> </div>
+                                </div>
+                                <div class="portlet-body">
+                                    
+                                
 			<?php echo $this->session->flashdata('user_updated'); ?>
-			
-
-		<table id="example" class="display" cellspacing="0" width="100%">
-                  <thead>
-                    <tr>
-                      <th>User</th>
-                      <th>Role</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+		      
+                      <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_3" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="all"><?php echo lang('User'); ?></th>
+                                                <th class="all"><?php echo lang('Role'); ?></th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                     <?php 
                
                     $roles=array('administrator'=>'Administrator','power_user'=>'Power User','director'=>'Director','staff'=>'Staff','visitors'=>'Visitors');
@@ -32,10 +45,13 @@
                     </tr>
                     <?php }?>
                   </tbody>
-                </table>                           <br />
+                      </table>
 		
        
 		</div>
+	
+	</div>
+                            </div>
 	
 	</div>
 
@@ -49,4 +65,4 @@ $(document).ready(function() {
  
     
     
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

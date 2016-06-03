@@ -1,26 +1,17 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
-	<div id="content_container" class="row">
-		
-		<div class="columns large-12">
-		
-			<p>Welcome to the <?= $this->config->item('site_title'); ?> Content Management System.</p>
-			
-		
-		</div>
-        
-        	<div id="content_container" class="row">
-		
-		
+	<div class="row">
+                  
+            <div class="col-md-12">
+                
+			<div class="portlet-body">
+		<h3 class="page-title"> <?php echo lang('Add Section') ; ?> </h3>
+                 <hr>
+                        </div>
 		
 		<div id="main_content_section" class="columns large-12 left">
 		
 			<div id="form_add">
-		
-				<fieldset>
-				
-					<legend>Add Section</legend>
-					
 				
                    		<?php echo form_open_multipart('/admincms/post/add_post_section'); 
 
@@ -32,46 +23,46 @@
 							echo $error;
 							}
 						?>
-				  <label>Section Title Arabic*</label>
-						<?php echo form_input(array('name' => 'section_name_ar', 'id' => 'section_name_ar', 'placeholder' => 'Section Title Arabic', 'value' => set_value('section_name_ar'))); ?>
-						
-                  <label>Section Title English</label>
-						<?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'placeholder' => 'Section Title English', 'value' => set_value('section_name_en'))); ?>
-						
-                        <label>Section Cover Image</label>
+                                        <div class="form-group"> 
+				  <label><?php echo lang('Title_ar') ; ?></label>
+						<?php echo form_input(array('name' => 'section_name_ar', 'id' => 'section_name_ar','class' => 'form-control spinner', 'placeholder' => lang('Title_ar'), 'value' => set_value('section_name_ar'))); ?>
+                                        </div>
+                             <div class="form-group"> 
+                  <label><?php echo lang('Title_en') ; ?></label>
+						<?php echo form_input(array('name' => 'section_name_en', 'id' => 'section_name_en', 'class' => 'form-control spinner','placeholder' => lang('Title_en'), 'value' => set_value('section_name_en'))); ?>
+                             </div>
+                            
+                             <div class="form-group"> 
+                        <label><?php echo lang('Section_Cover_Image') ; ?></label>
                   <?php echo form_upload(array('name' => 'userfile', 'id' => 'image'));	?>
 
-
+                             </div>
 					   
-                  <br />
-                  <label>Section Description Arabic</label>
-						<?php echo form_textarea(array('name' => 'section_desc_ar', 'id' => 'section_desc_ar', 'placeholder' => 'Section Description', 'value' => set_value('section_desc_ar'))); ?>
-						
-                  <label><br />
-                  Section Description English</label>
-						<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => 'Section Description', 'value' => set_value('section_desc_en'))); ?>
+                   <div class="form-group"> 
+                  <label><?php echo lang('Desc_ar') ; ?></label>
+						<?php echo form_textarea(array('name' => 'section_desc_ar', 'id' => 'section_desc_ar', 'placeholder' => lang('Desc_ar'), 'value' => set_value('section_desc_ar'))); ?>
+                   </div>
+                             <div class="form-group"> 
+                  <label><?php echo lang('Desc_en') ; ?></label>
+						<?php echo form_textarea(array('name' => 'section_desc_en', 'id' => 'section_desc_en', 'placeholder' => lang('Desc_en'), 'value' => set_value('section_desc_en'))); ?>
 					
-                  <label><br />
-                  Meta Keywords</label>
-						<?php echo form_input(array('name' => 'meta_keywords', 'id' => 'meta_keywords', 'placeholder' => 'Section Title Arabic', 'value' => set_value('meta_keywords'))); ?>
-						
-                  <label>Meta Description</label>
-						<?php echo form_textarea(array('name' => 'meta_description', 'id' => 'meta_description', 'placeholder' => 'Meta Description', 'value' => set_value('meta_description'))); ?>
-					 
-                        
-                  <label><br />
-                  Related Tag</label>
-						<?php echo form_input(array('name' => 'related_tag', 'id' => 'related_tag', 'placeholder' => 'Industries Arrange', 'value' => set_value('related_tag'))); ?>
-						
+                             </div>
+                            
+                     <div class="form-group"> 
+                  <label><?php echo lang('Related Tag') ; ?></label>
+						<?php echo form_input(array('name' => 'related_tag', 'id' => 'related_tag','class' => 'form-control spinner', 'placeholder' => lang('Related Tag'), 'value' => set_value('related_tag'))); ?>
+                     </div>
+                            
+                            <div class="form-actions">
 						<?php
 						
-						echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => 'Add Section', 'class' => 'button radius right small'));
+						echo form_submit(array('name' => 'add_project','id' => 'add_project','class' => 'btn green uppercase', 'value' => lang('Add Section') ));
 						
 						echo form_close();
 						
 						?>
 				
-				</fieldset>
+                            </div>
 			
 			</div>
 		
@@ -81,4 +72,4 @@
 	
 	</div>
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

@@ -1,35 +1,20 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
-	<div id="content_container" class="row">
-		
-		<div class="columns large-12">
-		
-			<p>Welcome to the <?= $this->config->item('site_title'); ?> Content Management System.</p>
-			
-			 
-		</div>
-        
-        	<div id="content_container" class="row">
-		
-		
-		
-		<div id="main_content_section" class="columns large-12 left">
-			<?php 
+
+<div class="row">
+                  
+            <div class="col-md-12">
+                
+			<div class="portlet-body">
+		<h3 class="page-title"><?php echo lang('Edit Main Menu'); ?> </h3>
+                <?php 
 								
 								if(!empty($update_record)){
 							echo $update_record;
 							}
 					?> 
-			<div id="form_add">
-		
-				<fieldset>
-				
-					<legend>Edit Main Menu - </legend>
-						
-					
-						
-                    
-                    	<p>
+                 <hr>
+                 
                     	  <?php foreach($rows as $r) : ?>
                     	  <?php 
 								$mst_menuid = $r->mst_menuid;
@@ -42,6 +27,8 @@
 							?> 
                     	  
                     	  <?php endforeach; ?>
+                 
+                 
                     	  
                     	  
                     	  <?php echo form_open('/admincms/menus/update_main_menu/'); 
@@ -54,42 +41,55 @@
 							echo $error;
 							}
 						?>
+                                                    
+                                         <div class="form-group">   
+						<label><?php echo lang('Menu Name') ; ?></label>
+                                                
+						<?php echo form_input(array('name' => 'title','class' => 'form-control spinner', 'id' => 'title', 'placeholder' => 'Title', 'value' => $title)); ?>
+                                         </div>
                         
-                                            	  <label>Menu Name*</label>
-						<?php echo form_input(array('name' => 'title', 'id' => 'title', 'placeholder' => 'Title', 'value' => $title)); ?>
-						
                         
-                        
-                        <label>URL*</label>
-						<?php echo form_input(array('name' => 'url', 'id' => 'url', 'placeholder' => 'URL', 'value' => $url)); ?>
-						
-                        <label>Target</label>
+                       <div class="form-group">   
+						<label><?php echo lang('URL') ; ?></label>
+						<?php echo form_input(array('name' => 'url','class' => 'form-control spinner', 'id' => 'url', 'placeholder' => 'URL', 'value' => $url)); ?>
+                       </div>
+                 <div class="form-group">   
+		<label><?php echo lang('Target') ; ?></label>
                        
 						<?php
 							 $options=array('_blank'=>'Blank','new'=>'New Windows','_self'=>'Same Page');
 								// $Industries  is for selected value
 								echo form_dropdown('target', $options , $target );
 						?>
+                 </div>                        
                         
-                        
-                        <label>Order</label>
-						<?php echo form_input(array('name' => 'order', 'id' => 'order', 'placeholder' => 'order', 'value' => $order)); ?>
+                       <div class="form-group">   
+		<label><?php echo lang('Order') ; ?></label>
+						<?php echo form_input(array('name' => 'order','class' => 'form-control spinner', 'id' => 'order', 'placeholder' => 'order', 'value' => $order)); ?>
+                       </div>
+                 
+                        <div class="form-group">   
+		<label><?php echo lang('Class Name') ; ?></label>
+						<?php echo form_input(array('name' => 'class_name','class' => 'form-control spinner', 'id' => 'class_name', 'placeholder' => 'Class Name', 'value' => $class_name)); ?>
 						
-                        <label>class_name</label>
-						<?php echo form_input(array('name' => 'class_name', 'id' => 'class_name', 'placeholder' => 'Class Name', 'value' => $class_name)); ?>
-						
- 						
-                        <label>Active</label> 
-                        <?php echo form_checkbox('is_active', '1',$is_active); ?>
-						
+                        </div>
+                 <div class="form-group">   
+                      <label class="rememberme mt-checkbox mt-checkbox-outline">
+                   
+                    <?php echo form_checkbox('is_active', '1',$is_active); ?> <?php echo lang('Active') ; ?>
+                          <span></span>
+                            </label>
+		</div>
+                 
+                 	<div class="form-group">   			
                        <input name="mst_menuid" type="hidden" value="<?= $mst_menuid; ?>" />
-						<?php echo form_submit(array('name' => 'edit_portfolio','id' => 'edit_portfolio', 'value' => 'Edit Portfolio', 'class' => 'button radius right small'));
+						<?php echo form_submit(array('name' => 'edit_portfolio','id' => 'edit_portfolio', 'value' => lang('Edit Main Menu'), 'class' => 'btn green uppercase'));
 						
 						echo form_close();
 						
 						?>
 				
-				</fieldset>
+                        </div>
 			
 			</div>
 		
@@ -99,4 +99,4 @@
 	
 	</div>
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

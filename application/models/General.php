@@ -645,7 +645,7 @@ class General extends CI_Model
 				}else{
 					$this->db->trans_commit();			//either  Commit data
 				}
-			//	return $this->db->_error_number();
+				return $this->db->error();
 			}
 		}
 	}
@@ -689,8 +689,8 @@ class General extends CI_Model
 				}
 				if($flag==HARD_DELETE){
 					$this->db->delete($tableName);
-					log_message('error', "DB Error: (".$this->db->_error_number().") ".$this->db->_error_message());
-				 return $this->db->_error_number();						 	
+					log_message('error', "DB Error: (".$this->db->error().") ".$this->db->_error_message());
+				 return $this->db->error();						 	
 				}
 				//$this->db->trans_complete(); //complete database transction	
 			

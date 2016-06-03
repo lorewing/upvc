@@ -1,11 +1,4 @@
-
-    
-    
-
-
-   
-
-        <section class="kopa-area kopa-area-top kopa-area-dark">
+<section class="kopa-area kopa-area-top kopa-area-dark">
 
             <div class="span-bg"></div>
             
@@ -182,84 +175,29 @@
                             <div class="row">
 
                                 <div class="owl-carousel owl-carousel-3">
+        <?php 
+            $section_id = '26';
+            $limit = 20;
+            $query = $this->db->order_by('post_id','asc')->get_where('post',array('section_id'=>$section_id,'active'=>TRUE),$limit);
+            foreach($query->result() as $row) {
+        ?>  
                                     <div class="item wow fadeInLeft" data-wow-duration="0.4s" data-wow-delay="0.3s">
                                         <article class="entry-item">
                                             <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/1.jpg" alt=""></a>
+                                                <a href="<?= base_url('news/news-detalis/');?>/<?php echo str_replace(' ', '-', $row->title_ar);?>/<?php echo $row->post_id;?>"><img src="<?php echo base_url(); ?>private/post/<?php echo $row->image_name ;?>" alt="<?php echo $row->title_ar; ?>"></a>
                                             </div>
                                             <div class="entry-content style1">
-                                                <span class="entry-date style1">07.يناير.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 1</a></h4>
-                                                <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
+                                                <span class="entry-date style1"><?php echo date('d/M/Y',  strtotime($row->created_date)); ?></span>
+                                                <h4 class="entry-title"><a href="<?= base_url('news/news-detalis/');?>/<?php echo str_replace(' ', '-', $row->title_ar);?>/<?php echo $row->post_id;?>"><?php echo $row->title_ar; ?></a></h4>
+                                                <p><?php echo word_limiter($row->desc_ar, 42);?></p> 
                                             </div>
                                         </article>
                                     </div>
+                <?php  } ?> ;     
                                     <!-- item -->
-                                    <div class="item wow fadeInRight" data-wow-duration="0.4s" data-wow-delay="0.3s">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content style1">
-                                                <span class="entry-date style1">07.Jan.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 2</a></h4>
-                                                <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content style1">
-                                                <span class="entry-date style1">07.Jan.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 3</a></h4>
-                                               <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content style1">
-                                                <span class="entry-date style1">07.Jan.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 4</a></h4>
-                                                <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content style1">
-                                                <span class="entry-date style1">07.Jan.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 5</a></h4>
-                                                <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="<?php echo base_url(); ?>site_view/images/size4/2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content style1">
-                                                <span class="entry-date style1">07.Jan.2015</span>
-                                                <h4 class="entry-title"><a href="#">مشروع 6</a></h4>
-                                                <p>نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل نبذة عن المشروع وطريقة العمل. </p> 
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- item -->
+                                    
+                                    
+                               
                                 </div>
                                 <!-- owl-carousel-3 -->
 

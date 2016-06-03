@@ -1,18 +1,16 @@
 <?php $this->load->view("admincms/includes/top.php"); ?>
 <style type="text/css">
 		.calendar {
-			font-family: Arial; font-size: 10px;
-			text-align: center;
+			font-family: Arial; font-size: 12px;
 		}
 		table.calendar {
 			margin: auto; border-collapse: collapse;
 		}
 		.calendar .days td {
-			width: 100px; height: 40px; padding: 2px;
+			width: 80px; height: 80px; padding: 4px;
 			border: 1px solid #999;
-			vertical-align: middle;
+			vertical-align: top;
 			background-color: #DEF;
-			text-align: center;
 		}
 		.calendar .days td:hover {
 			background-color: #FFF;
@@ -20,23 +18,6 @@
 		.calendar .highlight {
 			font-weight: bold; color: #00F;
 		}
-		
-		.calendar td {
-			width: 100px; height: 30px; padding: 2px;
-			border: 1px solid #999;
-			vertical-align: middle;
-			background-color: #CCC;
-			text-align: center;
-		}
-		
-		.calendar th {
-			width: 100px; height: 30px; padding: 2px;
-			border: 1px solid #999;
-			vertical-align: middle;
-			background-color: #999;
-			text-align: center;
-		}
-		
 	</style>
     
 	<div id="content_container" class="row">

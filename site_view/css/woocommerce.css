@@ -7,7 +7,7 @@
 @font-face {
   font-family: 'star';
   src: url("../fonts/star/star.eot");
-  src: url("../fonts/star/stard41d.eot?#iefix") format("embedded-opentype"), url("../fonts/star/star.woff") format("woff"), url("../fonts/star/star.ttf") format("truetype"), url("../fonts/star/star.svg#star") format("svg");
+  src: url("../fonts/star/star.eot?#iefix") format("embedded-opentype"), url("../fonts/star/star.woff") format("woff"), url("../fonts/star/star.ttf") format("truetype"), url("../fonts/star/star.svg#star") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -528,7 +528,7 @@ border: 1px solid #c7c0c7;
         right: 0;
         left: 0;
         bottom: 0;
-        background: url(../images/ajax-loader.html) center no-repeat rgba(255, 255, 255, 0.65); }
+        background: url(../images/ajax-loader.gif) center no-repeat rgba(255, 255, 255, 0.65); }
   .woocommerce a.button.added:before, .woocommerce-page a.button.added:before {
     content: "";
     position: absolute;
@@ -537,7 +537,7 @@ border: 1px solid #c7c0c7;
     top: 0.35em;
     right: -26px;
     text-indent: 0;
-    background: url(../images/success.html) no-repeat; }
+    background: url(../images/success.png) no-repeat; }
   .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce-page .cart .button, .woocommerce-page .cart input.button {
     float: none; }
   .woocommerce a.added_to_cart, .woocommerce-page a.added_to_cart {
@@ -738,7 +738,7 @@ border: 1px solid #c7c0c7;
       height: 16px;
       position: relative;
       float: left;
-      background: url(../images/star.html) repeat-x left 0; }
+      background: url(../images/star.png) repeat-x left 0; }
       .woocommerce p.stars span a, .woocommerce-page p.stars span a {
         float: left;
         position: absolute;
@@ -750,9 +750,9 @@ border: 1px solid #c7c0c7;
         border-right: none !important;
         overflow: hidden; }
         .woocommerce p.stars span a:hover, .woocommerce p.stars span a:focus, .woocommerce-page p.stars span a:hover, .woocommerce-page p.stars span a:focus {
-          background: url(../images/star.html) repeat-x left -16px; }
+          background: url(../images/star.png) repeat-x left -16px; }
         .woocommerce p.stars span a.active, .woocommerce-page p.stars span a.active {
-          background: url(../images/star.html) repeat-x left -32px; }
+          background: url(../images/star.png) repeat-x left -32px; }
         .woocommerce p.stars span a.star-1, .woocommerce-page p.stars span a.star-1 {
           width: 16px;
           z-index: 10; }
@@ -1032,11 +1032,11 @@ border: 1px solid #c7c0c7;
       -webkit-box-shadow: none;
       box-shadow: none; }
     .woocommerce form .form-row.validate-required.woocommerce-validated input.input-text, .woocommerce-page form .form-row.validate-required.woocommerce-validated input.input-text {
-      background-image: url(../images/icons/valid.html);
+      background-image: url(../images/icons/valid.png);
       background-position: 95% center;
       background-repeat: no-repeat; }
     .woocommerce form .form-row.validate-required.woocommerce-invalid input.input-text, .woocommerce-page form .form-row.validate-required.woocommerce-invalid input.input-text {
-      background-image: url(../images/icons/invalid.html);
+      background-image: url(../images/icons/invalid.png);
       background-position: 95% center;
       background-repeat: no-repeat; }
     .woocommerce form .form-row.validate-required.woocommerce-invalid .chzn-single, .woocommerce-page form .form-row.validate-required.woocommerce-invalid .chzn-single {
@@ -1227,7 +1227,7 @@ border: 1px solid #c7c0c7;
     .widget_layered_nav ul li.chosen a {
       padding: 0 6px 0 18px;
       border: 1px solid #ad74a2;
-      background: #ad74a2 url(../images/cross_white.html) no-repeat 6px center;
+      background: #ad74a2 url(../images/cross_white.png) no-repeat 6px center;
       color: #ffffff;
       border-radius: 3px; }
   .widget_layered_nav ul small.count {
@@ -1251,7 +1251,7 @@ border: 1px solid #c7c0c7;
     .widget_layered_nav_filters ul li a {
       padding: 0 6px 0 18px;
       border: 1px solid #ad74a2;
-      background: #ad74a2 url(../images/cross_white.html) no-repeat 6px center;
+      background: #ad74a2 url(../images/cross_white.png) no-repeat 6px center;
       color: #ffffff;
       border-radius: 3px;
       float: left; }
@@ -1315,7 +1315,7 @@ border: 1px solid #c7c0c7;
   .woocommerce-page input.button.loading:before,
   .woocommerce-page #respond input#submit.loading:before,
   .woocommerce-page #content input.button.loading:before {
-    background-image: url(../images/ajax-loader%402x.html);
+    background-image: url(../images/ajax-loader@2x.gif);
     background-size: 16px 16px; }
   .woocommerce a.button.added:before,
   .woocommerce button.button.added:before,
@@ -1326,17 +1326,17 @@ border: 1px solid #c7c0c7;
   .woocommerce-page input.button.added:before,
   .woocommerce-page #respond input#submit.added:before,
   .woocommerce-page #content input.button.added:before {
-    background: url(../images/success%402x.html) no-repeat;
+    background: url(../images/success@2x.png) no-repeat;
     background-size: 16px 14px; }
   .woocommerce .woocommerce form .form-row.validate-required.woocommerce-validated input.input-text,
   .woocommerce .woocommerce-page form .form-row.validate-required.woocommerce-validated input.input-text, .woocommerce-page .woocommerce form .form-row.validate-required.woocommerce-validated input.input-text,
   .woocommerce-page .woocommerce-page form .form-row.validate-required.woocommerce-validated input.input-text {
-    background-image: url(../images/icons/valid%402x.html);
+    background-image: url(../images/icons/valid@2x.png);
     background-size: 12px 9px; }
   .woocommerce .woocommerce form .form-row.validate-required.woocommerce-invalid input.input-text,
   .woocommerce .woocommerce-page form .form-row.validate-required.woocommerce-invalid input.input-text, .woocommerce-page .woocommerce form .form-row.validate-required.woocommerce-invalid input.input-text,
   .woocommerce-page .woocommerce-page form .form-row.validate-required.woocommerce-invalid input.input-text {
-    background-image: url(../images/icons/invalid%402x.html);
+    background-image: url(../images/icons/invalid@2x.png);
     background-size: 12px 9px; }
   .woocommerce p.stars span,
   .woocommerce p.stars span a:hover,
@@ -1345,7 +1345,7 @@ border: 1px solid #c7c0c7;
   .woocommerce-page p.stars span a:hover,
   .woocommerce-page p.stars span a:focus,
   .woocommerce-page p.stars span a.active {
-    background-image: url(../images/star%402x.html);
+    background-image: url(../images/star@2x.png);
     background-size: 16px 48px; } }
 .woocommerce-page, .woocommerce-page {
   /*.woocommerce-result-count {

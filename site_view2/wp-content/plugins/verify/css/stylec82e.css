@@ -1,0 +1,151 @@
+#ajax-loading-gif{
+	background:url('../image/ajax-loader.gif') no-repeat 0 0;
+	width:16px;
+	height:16px;
+	display:none;
+}
+.loading-show{
+	display:inline-block !important;
+	*display:block !important;
+}
+.theme-select{
+    border:1px solid #F0F0F0;
+    width: 50%;
+    padding: 8px 5px 8px 10px;
+	color:#767676;
+	font-family:"Arial", san-serif;
+	cursor:pointer;
+	font-size:13px;
+	line-height:18px;
+	margin-top:5px;
+}
+.purchase_location{
+	width:20px;
+	display:inline;
+}
+.purchase_section_fields input{
+    border:1px solid #F0F0F0;
+    width: 50%;
+    color:#767676;
+	font-family:"Arial", san-serif;
+	cursor:pointer;
+	font-size:13px;
+	line-height:18px;
+	padding: 8px 10px;
+	margin-top:5px;
+}
+.wpscst-button{
+     background-color: #80BA42;
+    border: 0 none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: 'Roboto',​Arial,​sans-serif;
+    font-size: 15px !important;
+    line-height: 1em !important;
+    margin: 4px 2px 0 0;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle !important;
+    width: auto !important;
+    margin-top: 20px;
+}
+.wpscst-table tr th{
+    text-align: left;
+}
+.wpscst-table input{
+    border:1px solid #F0F0F0;
+    padding: 8px 10px;
+    width: 50%;
+}
+.wpscst-table textarea{
+    border:1px solid #F0F0F0;
+    padding: 8px 10px;
+}
+.wpscst-button:hover{
+    background-color:#4b4c4d;
+    cursor: pointer;
+    color: #fff;
+}
+.section-hide {
+    display: none;
+}
+
+
+#wpas-new-ticket{
+    margin-top: 20px;
+}
+.wpas legend{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px !important;
+    color:#4B4C4D !important;
+    padding-bottom: 5px !important;
+}
+
+
+.wpas .form-control{    
+    border: 1px solid #F0F0F0 !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    color:#4B4C4D !important;
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+    transition: none !important;
+}
+
+.wpas .btn {
+    
+   border-radius:0;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-style: normal;
+      color: #fff;
+      width: auto;
+      background: #1f9fd8;
+      text-align: center;
+      padding: 14px 30px;
+      margin-top: 20px;
+      border: 0;
+      transition: all 0.5s, visibility 0s ease 0s;
+      -ms-transition: all 0.5s, visibility 0s ease 0s;
+      -webkit-transition: all 0.5s, visibility 0s ease 0s;
+      -moz-transition: all 0.5s, visibility 0s ease 0s; 
+}
+.wpas .btn:hover{
+    background: none repeat scroll 0 0 #4B4C4D !important;
+    color: #FFFFFF !important;
+}
+
+.eleven h1{
+    display: none;
+}
+#wpas_fileupload{
+    display: none;
+}
+
+.wpas .well:before,.wpas .well:after{
+  content: '.';  
+  display: block;  
+  overflow: hidden;  
+  visibility: hidden;  
+  font-size: 0;  
+  line-height: 0;  
+  width: 0;  
+  height: 0;
+ }
+.wpas .well:after{  
+	clear: both;
+}
+.wpas .well{  
+	zoom: 1;
+}
+
+#wpas-new-ticket select, #wpas-new-ticket input{
+	font-family:"Arial", san-serif;	
+	font-size:13px;
+	line-height:18px;
+	color:#767676 !important;
+}

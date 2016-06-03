@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+@import url(http://fonts.googleapis.com/css?family=Work+Sans:400,300,200,100,500,600,700,800,900);
+@import url(http://fonts.googleapis.com/css?family=Courgette);
+a:hover { text-decoration: none; }
+
+.kopa-custom-chirstmas { background: url("images/bg-banner.jpg") repeat-x; }
+
+.xmas-title{ font-size: 25px;}
+.xmas-subtitle{ font-size: 30px; }
+
+.kopa-content span{display: block;}
+
+.kopa-content { padding-top: 17px; padding-left: 15px; text-align: center; }
+.kopa-content b { color: #ffffff; font-size: 30px; line-height: 26px; width: 45%; float: left; font-family: 'Courgette', cursive; font-weight: 400; margin-left: -18px;}
+.kopa-content .kopa-sale { width: 38%; float: left; font-size: 40px; font-family: 'Oswald', sans-serif; line-height: 53px; margin-left: -15px; }
+.kopa-content a { font-size: 36px; color: #fff000; text-transform: uppercase; font-weight: bold; font-family: 'Work Sans', sans-serif; line-height: 36px; }
+.kopa-content p { color: #ffffff; font-size: 18px; line-height: 30px; font-family: 'Alex Brush', cursive; }
+
+.kopa-content.center-content{ padding-left: 0px;}
+.kopa-content.center-content a{ font-family: 'Oswald', sans-serif; font-size: 32px;}
+.kopa-content.center-content p{ font-family: 'Work Sans', sans-serif;}
+
+.kopa-content.left-content{padding-top: 20px;}
+
+.kopa-countdown-content { position: relative; padding: 10px 0; }
+.kopa-countdown-content span { color: #ffffff; font-size: 20px; }
+.kopa-countdown-content .kopa-times { display: block; font-size: 12px; }
+
+.kopa-close { position: absolute; top: 7px; right: 0px; width: 24px; height: 24px; border: #80838a solid 2px; border-radius: 50%; padding: 0 4px; color: #80838a; }
+
+canvas { width: 71px !important; height: 71px !important; }
+
+.kopa-chart { position: relative; display: inline-block; width: 71px; height: 71px; text-align: center; padding: 13px 0; margin-left: 15px; }
+
+.kopa-chart canvas { position: absolute; top: 0; left: 0; }
+
+.kopa-widget-christmas{ margin-bottom: 0px !important;}
+
+.kopa-chart span:nth-child(2){line-height: 10px;}
+
+
+@media (max-width: 991px){ .kopa-custom-chirstmas{background: url("images/bg-banner-2.jpg") no-repeat;}}
+
+@media (min-width: 320px){.xmas-title{font-size: 20px;} .kopa-content b{margin-left: 40px;} .kopa-countdown-content{text-align: center;}}
+
+@media (min-width: 375px){.kopa-content .kopa-sale{margin-left: -40px;}}
+
+@media (min-width: 480px){.xmas-title{font-size: 25px;} .kopa-content .kopa-sale{margin-left: -67px;} .kopa-content b{margin-left: 75px;}   }
+
+@media (min-width: 600px){.kopa-content .kopa-sale{margin-left: -122px} .kopa-content b{margin-left: 113px}}
+
+@media (min-width: 736px){.kopa-content .kopa-sale{margin-left: -177px;} .kopa-content b{margin-left: 136px;}}
+
+@media (min-width: 768px){.kopa-content .kopa-sale{margin-left: -28px;} .kopa-content.center-content{margin-left: 80px;} .kopa-content b{margin-left: 0px;} }
+
+@media (min-width: 980px){.kopa-content .kopa-sale{margin-left: -30px;} .kopa-content b{margin-left: -55px;} .kopa-content.center-content{margin-right: -175px;} .kopa-close{right:-105px;}}
+
+@media (min-width: 992px){.kopa-content b{width: 46%; margin-left: 0;} .kopa-content .kopa-sale{margin-left: 0;} .kopa-content.center-content{margin-right: 0; margin-left: 0;} .kopa-close{right: -10px;}}
+
+@media (min-width: 1200px){
+	.container { width: 1130px; }
+	.kopa-content .kopa-sale{ margin-left: -30px; }
+}

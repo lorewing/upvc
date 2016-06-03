@@ -1,25 +1,12 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
 
-	<div id="content_container" class="row">
-		
-		<div class="columns large-12">
-		
-			<p>Welcome to the <?= $this->config->item('site_title'); ?> Content Management System.</p>
-			
-		
-		</div>
-        
-        	<div id="content_container" class="row">
-		
-		
-		
-		<div id="main_content_section" class="columns large-12 left">
-		
-			<div id="form_add">
-		
-				<fieldset>
-				
-					<legend>Add Multiple Image</legend>
+	<div class="row">
+                  
+            <div class="col-md-12">
+                
+			<div class="portlet-body">
+		<h3 class="page-title"> <?php echo lang('Add Multiple Image') ; ?></h3>
+                 <hr>
 					
 				
                    		<?php  
@@ -45,23 +32,25 @@
                         
                             <div class="clearfix"></div>
                               <div class="input-control">
-                                <label class="control-label" for="typeahead">Image: </label>
+                                   <div class="form-group"> 
+                                <label class="control-label" for="typeahead"><?php echo lang('Image'); ?> </label>
                                 <div class="input-group input-switch-group"><input type="file" name="userfile[]"  class="" id="userfile" multiple />
                                 <?php /*?><button type="button" id="upload" name="upload" class="btn btn-large" style="float: right;">Upload</button><?php */?>
-                                <br>
-                                <em>Select multiple images use Ctrl + Select Images</em></div> </div>
+                                 </div>
+                                    <div class="form-group"> 
+                                <em><?php echo lang('Upload Image text'); ?></em></div> </div>
      					 <div class="clearfix"></div>
-						<br/>
-						
+						</div>
+						 <div class="form-group"> 
 						<?php
 						
-						echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => 'Add Images', 'class' => 'button radius right small'));
+						echo form_submit(array('name' => 'add_project','id' => 'add_project', 'value' => 'Add Images', 'class' => 'btn green uppercase'));
 						
 						echo form_close();
 						
 						?>
 				
-				</fieldset>
+				</div>
 			
 			</div>
 		
@@ -69,6 +58,5 @@
 	
 	</div>
 	
-	</div>
 
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

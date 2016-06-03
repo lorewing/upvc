@@ -9,6 +9,7 @@
 			$this->load->helper('cookie');
 			$this->load->library('session');
 			$this->load->model('membership_model');
+                        $this->lang->load('english_lang', 'english');
 			$this->is_logged_in();
 			$this->membership_model->getKeywords('Portfolio'); // load keywords for each page based on controler name
 			
@@ -176,7 +177,7 @@
 			//Form Validation
 			$this->form_validation->set_rules('title_ar', 'Title Arabic', 'trim|xss_clean');
 			$this->form_validation->set_rules('title_en', 'Title English', 'trim|xss_clean');
-			$this->form_validation->set_rules('section_id', 'Section', 'trim|xss_clean');	
+			//$this->form_validation->set_rules('section_id', 'Section', 'trim|required|xss_clean');	
 			$this->form_validation->set_rules('desc_ar', 'Section Desc. Arabic', '');
 			$this->form_validation->set_rules('desc_en', 'Section Desc. English', 'trim|xss_clean');
 			$this->form_validation->set_rules('related_tag', 'Related Tag', 'trim|xss_clean');
@@ -201,7 +202,7 @@
 							$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							   'section_id' 	=> '1', 
+							  'section_id' => '26', 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'active' 	=> $this->input->post('active'), 
@@ -267,7 +268,7 @@
 					$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							   'section_id' 	=> '1', 
+							  'section_id' => '26', 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'image_name' 		=> $file_data['file_name'],
@@ -510,7 +511,7 @@
 		{
 			
 			//Form Validation
-			$this->form_validation->set_rules('title_ar', 'Title Arabic', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('title_ar', 'Title Arabic', 'trim|xss_clean');
 			$this->form_validation->set_rules('title_en', 'Title English', 'trim|xss_clean');
 			//$this->form_validation->set_rules('section_id', 'Section', 'trim|required|xss_clean');	
 			//$this->form_validation->set_rules('desc_ar', 'Section Desc. Arabic', '');
@@ -566,7 +567,7 @@
 						$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							   'section_id' 	=> '1', 
+							   'section_id' 	=> '26', 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'image_name' 		=> $file_data['file_name'],
@@ -586,7 +587,7 @@
 						$data = array(
 							   'title_ar' 		=> $this->input->post('title_ar'),
 							   'title_en' 	=> $this->input->post('title_en'), 
-							   'section_id' 	=> '1', 
+							   'section_id' => '26', 
 							   'desc_ar' 		=> $this->input->post('desc_ar'),
 							   'desc_en' 	=> $this->input->post('desc_en'), 
 							   'active' 	=> $this->input->post('active'),

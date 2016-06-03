@@ -34,10 +34,10 @@
 		<script type="text/javascript">
 		tinymce.init({
 		    selector: "textarea",
-			document_base_url: "http://www.uaefencing.net/",
+			document_base_url: "http://www.xm-solutions.net/",
 			relative_urls: false,
 		    theme_advanced_resizing : true,
-			directionality : 'rtl',
+			directionality : 'LTR',
 			entity_encoding : 'raw',
             theme_advanced_resize_horizontal : false ,
             plugins : "arphp,autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,visualblocks",

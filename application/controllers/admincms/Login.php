@@ -88,7 +88,26 @@ class Login extends CI_Controller {
 			$data['site_title'] = "Login Page";
 			$this->load->view('admincms/login',$data);
 		}
+                
+                function internal()
+                {
+                    $data['site_title'] = "Internal Page";
+                    $this->load->view('admincms/Internal',$data);
+                }
+                
+                function form_validation()
+                {
+                    $data['site_title'] = "Internal Page";
+                    $this->load->view('admincms/form_validation',$data);
+                }
 		
+                
+                function layout()
+                {
+                    $data['site_title'] = "Layout Page";
+                    $this->load->view('admincms/layout',$data);
+                }
+                
 }// End Class
 
 

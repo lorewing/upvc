@@ -20,38 +20,12 @@ class Home extends CI_Controller {
 	 */
 	 
 	public function index($year = null, $month = null){
-				$this->load->model('Mycal_model');
-
-           
-				 if (!$year) {
-			$year = date('Y');
-		}
-		if (!$month) {
-			$month = date('m');
-		}
-		
-		$this->load->model('Mycal_model');
-		
-		//$data['calendar_small'] = $this->Mycal_model->generate_small($year, $month);
-		
-		$this->load->model('Mycal_model');
-		
-		if ($day = $this->input->post('day')) {
-			$this->Mycal_model->add_calendar_data(
-				"$year-$month-$day",
-				$this->input->post('data')
-			);
-		}
-		
-		$data['calendar'] = $this->Mycal_model->generate_home($year, $month);
-	
 		
 		$data=array(
 			'title'=>'يو بي في سي“ الاختصاص الاوروبي',
 			'keywords'=>'upvc,يو بي في سي,الاختصاص الاوروبي',
 			'description' =>'',
-			//'calendar_small' => $this->Mycal_model->generate_small($year, $month),
-			'calendar_small' => $this->Mycal_model->generate_home($year, $month),
+			
 		          );
 		
 		$this->load->view('site/includes_ar/header',$data);

@@ -1,36 +1,40 @@
-<?php $this->load->view("admincms/includes/top.php"); ?>
-
-			<div class="row" id='admin_section'>
-				
-    <div id="content_container" class="row">
-		
-		<div class="columns large-12">
-			
-			<ul class="no-bullet inline-list" id="manage_nav">
-				<li><a href="<?php echo base_url(); ?>admincms/menus/add_main_menu/"><img src="<?php echo base_url(); ?>admin_view/images/icons/add.png"><span>Add Main Menu</span></a></li>
-			</ul>	
-			
+<?php $this->load->view("admincms/includes2016/top.php"); ?>
+ <h3 class="page-title"><?php echo lang('View Sub Menu') ; ?> </h3>
+ <hr>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                  
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-globe"></i><?php echo lang('View Sub Menu') ; ?></div>
+                                    <div class="tools"> </div>
+                                </div>
+                                <div class="portlet-body">
 			<?php echo $this->session->flashdata('user_updated'); ?>
 			
 			<?php 
-			
-		         $attributes = array('class' => 'email', 'id' => 'frm1'); 
+                             $attributes = array('class' => 'email', 'id' => 'frm1');
 
 				echo form_open('/admincms/menus/update_sub_menu_order',$attributes); ?>
-			<table id="example" class="display" cellspacing="0" width="100%">
-                  <thead>
-                    <tr>
-                    <th><input type="checkbox" name="checkall" onclick="checkedAll();"></th>
-                    <th>Menu Name</th>
-                	<th>URL</th>
-                    <th> Active</th>
-                    <th>order</th>
-                    <th>Order Arrange</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+			 <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_3" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" name="checkall" onclick="checkedAll();"></th>
+                                                <th class="all"><?php echo lang('Sub Menu Name'); ?></th>
+                                                <th class="all"><?php echo lang('URL'); ?></th>
+                                                <th class="all"><?php echo lang('Active'); ?></th>
+                                                 <th class="all"><?php echo lang('Order');?></th>
+                                                 <th class="all"><?php echo lang('Order Arrange');?></th>
+                                                <th class="all"><?php echo lang('Edit'); ?></th>
+                                                <th class="all"><?php echo lang('Delete'); ?></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                   	
 							<?php 
 							if(!empty($mani_menu))
@@ -53,7 +57,7 @@
 						
                  
 
-						<td><input type='text' name='arrange[<? echo $row->mst_menuid ?>] ' size='3' dir="ltr" value="<?php echo $row->order ?>" style="border-style: double; border-width: 3">  </td> 
+						<td><input type='text' name='arrange[<?php echo $row->mst_menuid ?>] ' size='3' dir="ltr" value="<?php echo $row->order ?>" style="border-style: double; border-width: 3">  </td> 
                            <td><a href="<?= base_url('admincms/menus/edit_sub_menu/'.encodeId($row->mst_menuid));?>"> Edit </a></td>
 					    <td><a href="<?= base_url('admincms/menus/delete_sub_menu/'.encodeId($row->mst_menuid));?>"> Delete </a></td>
                      
@@ -73,19 +77,25 @@
 				<br/>
 				<?php
 						
-						echo form_submit(array('name' => 'sbm','id' => 'sbm', 'value' => 'Update Menu Order', 'class' => 'button radius right small'));
-						echo form_submit(array('name' => 'sbm','id' => 'sbm', 'value' => 'Delete Selected Menus', 'class' => 'button radius right small','onclick'=>"return con('Are you sure you want to delete the selected menus?')"));
+						echo form_submit(array('name' => 'sbm','id' => 'sbm', 'value' => 'Update Arrange', 'class' => 'btn green uppercase'));
 
+						echo form_submit(array('name' => 'sbm','id' => 'sbm', 'value' => 'Delete Selected Menus', 'class' => 'btn green uppercase','onclick'=>"return con('Are you sure you want to delete the selected menus?')"));
+
+						
 						echo form_close();
 						
 						?>
-		</div>
-	
-	</div>
-
-<script>		
+                                </div>
+                                </div>
+                            </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                        </div>
+                        
+                    </div>
+            
+ <script>		
 $(document).ready(function() {
-	$('#example').dataTable();
+	
 } ); //end ready functions
 
 checked=false;
@@ -109,5 +119,4 @@ function con(message) {
 } //end con functions
 </script>
     
-    
-<?php $this->load->view("admincms/includes/footer.php"); ?>
+<?php $this->load->view("admincms/includes2016/footer.php"); ?>

@@ -16,6 +16,7 @@ class Roles extends CI_Controller {
 			$this->load->helper('cookie');
 			$this->load->library('session');
 			$this->load->model('membership_model');
+                        $this->lang->load('english_lang', 'english');
 			$this->is_logged_in();
 			
 			// main original code

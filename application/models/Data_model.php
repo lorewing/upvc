@@ -85,24 +85,6 @@
 			}// End getPortfolio
 			
 			
-			function viewMediaGroup(){
-			$this->db->select('*');
-			$this->db->from('products');
-			$this->db->join('category', 'category.category_id = products.category_id');
-			
-			$query = $this->db->get();
-			
-			
-				if($query->num_rows() > 0)
-				{
-					foreach ($query->result() as $row){
-							$data[]=$row;
-						}
-						return $data;
-					}
-			
-			}// End getPortfolio
-			
 		function add_menu()
 		{
 			$data = array(
@@ -324,8 +306,22 @@
 		}
 				
 				
-					function viewPost($post_id){
+					function postSection(){
+						$query = $this->db->get_where('post_section', array('section_type' => 'services'));
+						
+						$data=$query->result() ;
+						return $data;		
+						}// End postSection
+                                                
+                                                function viewPost($post_id){
 						$query = $this->db->get_where('post', array('post_id' => $post_id));
+						
+						$data=$query->result() ;
+						return $data;		
+						}// End viewPost
+                                                
+                                                function viewServicesSection($section_id){
+						$query = $this->db->get_where('post_section', array('section_id' => $section_id));
 						
 						$data=$query->result() ;
 						return $data;		
@@ -349,17 +345,6 @@
 					}
 			
 			}// End getPost	
-			
-			function getCategory(){
-					$q = $this->db->get('category');
-					
-					if($q->num_rows() > 0) {
-						foreach ($q->result() as $row) {
-							$data[] = $row;
-						}
-						return $data;
-					}
-				}// End getCategory	
 			
 			function editTable($table_name,$where_id,$id){
 			$query = $this->db->get_where($table_name, array($where_id => $id));
@@ -462,19 +447,10 @@
 					
 					public function get_all_post_ar($per_pg,$offset)
 			{
-				$this->db->order_by("post_id", "desc");
+		$this->db->order_by("post_id", "desc");
 				$this->db->where('title_ar <>', '');
 
 				$query=$this->db->get('post',$per_pg,$offset);
-				return $query->result();
-			}
-			
-			public function get_all_pictures($per_pg,$offset,$group_id)
-			{
-				$this->db->order_by("media_id","desc");
-				$this->db->where('group_id', $group_id); 
-
-				$query=$this->db->get('media',$per_pg,$offset);
 				return $query->result();
 			}
 			
@@ -494,15 +470,6 @@
 				$this->db->where('title_en <>', '');
 
 				$query=$this->db->get('post',$per_pg,$offset);
-				return $query->result();
-			}
-			
-			public function get_player_profile($per_pg,$offset)
-			{
-				$this->db->order_by("player_id", "desc");
-				$this->db->where('active', TRUE);
-
-				$query=$this->db->get('player_profile',$per_pg,$offset);
 				return $query->result();
 			}
 			

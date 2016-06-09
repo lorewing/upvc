@@ -52,6 +52,8 @@
 					    <td><a href="<?= base_url('admincms/post/delete_post/'.$row->post_id);?>"> Delete </a></td>
                         
                        <input name="post_id" type="hidden" value="<?= $row->post_id ?>" />
+                       <input name="section_id" type="hidden" value="26" />
+
 
 					</tr>
 			

@@ -30,10 +30,9 @@
                             <div id="kopa-map" class="kopa-map" data-place="BLACKCAT" data-latitude="25.2418714" data-longitude="51.4575456"></div>
                         </div>
                 
-                    </div>
-                    <!-- col-md-12 -->
-                
-                </div>
+                            </div>
+
+                        </div>
                 <!-- row --> 
 
                 <div class="row">
@@ -68,19 +67,40 @@
                         <div class="widget widget_text">
 
                             <div class="contact-box">
-                                <form class="contact-form clearfix" action="#" method="post" novalidate>
+                                     <?php 
+					$attributes = array('class' => 'contact-form clearfix');
+					
+					echo form_open('contact_us',$attributes);
+						
+						 echo validation_errors('<p class=\'error\'>');
+						
+						echo $this->session->flashdata('message');
+						if(!empty($error)){
+							echo $error;
+							}
+					?> 
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <p class="input-block">
-                                                <input type="text" value="الأسم" onfocus="if(this.value=='Your Name')this.value='';" onblur="if(this.value=='')this.value='Your Name';" id="contact_name" name="name" class="valid">
+                                                <?php echo form_input(array('name' => 'name', 'id' => 'name', 'placeholder' => 'الأسم', 'value' => set_value('name'))); ?>
+
                                                 <span class="fa fa-user"></span>
                                             </p>
                                         </div>
                                         <!-- col-md-12 -->
+                                        
+                                         <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <p class="input-block">
+                                     <?php echo form_input(array('name' => 'phone', 'id' => 'phone', 'placeholder' => 'رقم الهاتف', 'value' => set_value('phone'))); ?>
+
+                                                <span class="fa fa-user"></span>
+                                            </p>
+                                        </div>
 
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <p class="input-block">
-                                                <input type="text" value="البريد الالكتروني" onfocus="if(this.value=='Email')this.value='';" onblur="if(this.value=='')this.value='Email';" id="contact_email" name="email" class="valid">
+                                                <?php echo form_input(array('name' => 'email', 'id' => 'email', 'placeholder' => 'البريد الإلكترونى', 'value' => set_value('email'))); ?>
+
                                                 <span class="fa fa-envelope"></span>
                                             </p>
                                         </div>
@@ -89,10 +109,19 @@
                                     </div>
                                     <!-- row --> 
                                     <p class="textarea-block">  
-                                        <textarea name="message" id="contact_message" onfocus="if(this.value=='Message here')this.value='';" onblur="if(this.value=='')this.value='Message here';" cols="88" rows="5">رسالتك</textarea>
+                                         <?php echo form_textarea(array('name' => 'message', 'id' => 'message', 'placeholder' => 'رسالتك', 'value' => set_value('message'))); ?>
+
                                     </p>
-                                    <p class="contact-button clearfix">           
-                                        <span><input type="submit" value="ارسال" id="submit-contact"></span>
+                                    <p class="contact-button clearfix"> 
+                                        <div class="g-recaptcha" data-sitekey="6LeUxSETAAAAADl1Q9Te8uYp097JU6hLA2hOg_V1"></div>           
+
+                                         <?php
+							
+						echo form_submit(array('name' => 'submit','id' => 'submit', 'value' => 'Send', 'class' => 'contact-button animated'));
+						
+						echo form_close();
+						
+						?>
                                     </p>
                                 </form>
                                 <div id="response"></div>

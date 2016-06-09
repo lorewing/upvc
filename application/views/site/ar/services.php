@@ -28,54 +28,26 @@
 
                         <div class="widget kopa-service-4-widget">
                             <ul class="clearfix">
+                                
+                        <?php 
+                            $section_type = 'products';
+                            $limit = 20;
+                            $query = $this->db->order_by('view_order','asc')->get_where('post_section',array('section_type'=>$section_type,'active'=>TRUE));
+                            foreach($query->result() as $row) {
+                        ?>  
                                 <li class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.4s" data-wow-delay="0.7s">
                                     <article class="entry-item">
-                                        <a class="sv-icon-2" href="#">
-                                        <i class="fa fa-slack"></i>
+                         <a href="<?= base_url('news/news-detalis/');?>/<?php echo str_replace(' ', '-', $row->section_name_ar);?>/<?php echo $row->section_id;?>"><img src="<?php echo base_url(); ?>private/post/<?php echo $row->section_cover_thumb ;?>" alt="<?php echo $row->section_name_ar; ?>"></a>
+
                                         </a>
                                         <div class="entry-content">
-                                            <h4 class=""><a href="win.html">نوافذ</a></h4>
-                                            <p>تعريف على انواع النوافذ والخامات المستخدمه وانواعها</p> 
+                                            <h4 class=""><a href="win.html"><?php echo $row->section_name_ar; ?></a></h4>
+                                            <p><?php echo $row->section_desc_ar; ?></p> 
                                             <a href="win.html" class="more-link style2">المزيد</a>
                                         </div>
                                     </article>
                                 </li>
-                                <li class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.4s" data-wow-delay="0.6s">
-                                    <article class="entry-item">
-                                        <a class="sv-icon-2" href="#">
-                                        <i class="fa fa-empire"></i>
-                                        </a>
-                                        <div class="entry-content">
-                                            <h4 class=""><a href="glass_domes.html">قبب زجاجية</a></h4>
-                                            <p>تعريف على انواع الزجاج والخامات المستخدمه وانواعها</p> 
-                                            <a href="glass_domes.html" class="more-link style2">المزيد</a>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.4s" data-wow-delay="0.5s">
-                                    <article class="entry-item">
-                                        <a class="sv-icon-2" href="#">
-                                        <i class="fa fa-building"></i>
-                                        </a>
-                                        <div class="entry-content">
-                                            <h4 class=""><a href="face.html">الوجهات</a></h4>
-                                            <p>تعريف على انواع الوجهات والخامات المستخدمه وانواعها</p> 
-                                            <a href="face.html" class="more-link style2">المزيد</a>
-                                        </div>
-                                    </article>
-                                </li>
-                              <li class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.4s" data-wow-delay="0.4s">
-                                    <article class="entry-item">
-                                        <a class="sv-icon-2" href="#">
-                                            <i class="fa fa-home"></i>
-                                        </a>
-                                        <div class="entry-content">
-                                            <h4 class=""><a href="door.html">الأبواب</a></h4>
-                                            <p>تعريف على انواع الابواب والخامات المستخدمه وانواعها</p> 
-                                            <a href="door.html" class="more-link style2">المزيد</a>
-                                        </div>
-                                    </article>
-                                </li>
+                              <?php  } ?> ;      
                             </ul>
                         </div>
                         <!-- widget --> 

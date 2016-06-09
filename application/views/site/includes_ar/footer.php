@@ -165,6 +165,9 @@
     <script src="<?php echo base_url(); ?>site_view/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>site_view/js/custom.js" charset="utf-8"></script>
     
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script><script>new WOW().init();</script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    
     
     
 </body>

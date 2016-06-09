@@ -37,12 +37,10 @@ performance management egypt,organizational development egypt,recruitment egypt'
 			'description' =>'Expert Management Solutions - We have the tools and skills to help you select, train and retain the right employees.',
                                      );
 			
-			$this->load->view('site/includes/header_internal',$data);
-	
-			$this->load->view('site/includes/nav_internal');
-			$this->load->view('site/en/contact'); 
-                        $this->load->view('site/includes/sidebar');
-                        $this->load->view('site/includes/footer_contactus');
+			$this->load->view('site/includes_ar/header',$data);
+                        $this->load->view('site/includes_ar/nav_insite');
+                        $this->load->view('site/ar/contact_us'); 
+                        $this->load->view('site/includes_ar/footer');
 				
 			}
 			else
@@ -76,9 +74,9 @@ performance management egypt,organizational development egypt,recruitment egypt'
 		 
 			
 			$this->email->from('info@xm-solutions.net', 'xm-solutions.net - Contact Us page');
-			$this->email->to('info@xm-solutions.net'); 
-                        $this->email->cc('reem.mhd@gmail.com');
-                        $this->email->bcc('ahmed@lorewing.com');
+			$this->email->to('lorewing2006@gmail.com'); 
+                       // $this->email->cc('reem.mhd@gmail.com');
+                      //  $this->email->bcc('ahmed@lorewing.com');
 			$this->email->reply_to($this->input->post('email'));  
 			
 			$this->email->set_mailtype('html');

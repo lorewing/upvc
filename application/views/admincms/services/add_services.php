@@ -7,7 +7,7 @@
 			<div class="portlet-body">
 		<h3 class="page-title"> <?php echo lang('Add Services') ; ?></h3>
                  <hr>
-                   		<?php echo form_open_multipart('/admincms/post/add_post'); 
+                   		<?php echo form_open_multipart('/admincms/services/add_services'); 
 
 
                         echo validation_errors('<p class=\'error\'>');

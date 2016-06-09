@@ -8823,5 +8823,66 @@ header.por-style {
     min-width: 100px;
     padding: 8px 15px; }
 
+  
+/* ===================================================== */
+/* Alert Boxs
+/* ===================================================== */
+
+.alert {
+    background: #f2f2f2;
+    border: none;
+    border: 1px solid gray;
+    margin: 0 0 20px 0;
+    padding: 10px 35px 10px 20px;
+    position: relative;
+}
+
+.alert strong {
+    font-weight: 600;
+}
+
+.alert.success {
+    background: #B8F2BC;
+    border-color: #90CD90;
+    color: #3F963E;
+}
+
+.warning {
+    background: #FFFFC7;
+    border-color: #FFFF00;
+    color: #BEA34E;
+}
+
+.error {
+    background: red;
+    border-color: red;
+    color: white;
+}
+
+.alert.notice {
+    background: #C6DAFF;
+    border-color: #8A89F4;
+    color: #504FA9;
+}
+
+.success {
+    background: #FFFF00;
+    border-color: #90CD90;
+    color:#09C;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+/* Close button */
+.alert .alert-button {
+    color: white;
+    font-size: 14px;
+    right: 0;
+    top: 0;
+    padding: 10px 18px; /* Extra click space */
+    position: absolute;
+}
+
   .owl-carousel-5 .entry-content {
     padding: 10px 15px; } }

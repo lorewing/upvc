@@ -115,7 +115,7 @@ $lang['services names'] = 'services names';
 $lang['Show On First Page'] = 'Show On First Page';
 
 $lang['Delete Selected Sections'] = 'Delete Selected Sections';
-$lang['URL2'] = 'URL2';
+$lang['Delete Selected Products'] = 'Delete Selected Products';
 $lang['URL2'] = 'URL2';
 $lang['URL2'] = 'URL2';
 $lang['URL2'] = 'URL2';

@@ -167,20 +167,15 @@
                 <div class="wrapper">
                    
                     <ol class="filters-options clearfix">
-                        <li data-filter="kopa-fas">عين خالد</li>
-                        <li data-filter="kopa-ill">ابو هامور</li>
-                        <li data-filter="kopa-brand">أبو نخلة والسلية</li>
-                        <li data-filter="kopa-web">الريان ومعيذر</li>
-                        <li data-filter="kopa-fas">الشحنيه</li>
-                        <li data-filter="kopa-ill">الخرطيات والغرافة</li>
-                        <li data-filter="kopa-brand">الخيسة وروضه الحمامه</li>
+                        <?php 
+                        		
+			$query = $this->db->get_where('post_section',array('section_id !='=>26));
                         
-                        <li data-filter="kopa-web">أم صلال وخط الشمال</li>
-                        <li data-filter="kopa-fas">الدحيل والدفنة</li>
-                        <li data-filter="kopa-ill">الوكره والوكير</li>
-                        <li class="active" data-filter="kopa-all">متفرقة</li>
-                        <li data-filter="kopa-brand">الدوحة</li>
-                        <li data-filter="kopa-web">الثمامة والمطار</li>
+                        foreach($query->result() as $section) {
+                                  ?>
+                       <li data-filter="<?php echo str_replace(' ', '-', $section->section_name_en)  ;?>"><?php echo $section->section_name_ar ;?></li>
+                        
+                        <?php } ?>  
                         
                     </ol>
                     <!-- filter-options -->
@@ -189,119 +184,34 @@
                 <div class="por-wrap">
                     <div class="portfolio-container">
                         <ul class="portfolio-list-item clearfix">
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-ill", "kopa-brand", "kopa-web" ]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/1.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/1.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-web", "kopa-fas"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/2.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/1.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-ill", "kopa-fas"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/3.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/3.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-brand", "kopa-web"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/4.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/4.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-ill", "kopa-brand"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/5.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/5.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-web", "kopa-fas"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/6.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/6.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-brand"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/7.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/7.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="por-item1" data-filter-class='["kopa-all", "kopa-ill", "kopa-fas"]'>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a class="thumb-hover" href="#"></a>
-                                        <a href="#"><img src="<?php echo base_url(); ?>site_view/images/portfolio/8.jpg" alt="" /></a>
-                                        <a href="<?php echo base_url(); ?>site_view/images/portfolio/8.jpg" class="popup-icon style1">
-                                            <span class="fa fa-expand"></span>
-                                        </a>
-                                        <a href="#" class="link-icon style1">
-                                            <span class="fa fa-plus"></span>
-                                        </a> 
-                                    </div>
-                                </article>
-                            </li>
-                        </ul>
+                    <?php 
+                        $this->db->select('*');
+			$this->db->from('post');
+			$this->db->join('post_section', 'post.section_id = post_section.section_id');
+                        $this->db->where('post.section_id !=', '26');
+			$this->db->order_by('post_id', 'DESC');
+                       			
+			$query = $this->db->get();
+                        
+                        foreach($query->result() as $row) {
+                                  ?>  
+
+                        <li class="por-item1" data-filter-class='["<?php echo str_replace(' ', '-', $row->section_name_en)  ;?>" ]'>
+                            <article class="entry-item">
+                                <div class="entry-thumb">
+                                    <a class="thumb-hover" href="#"></a>
+                                    <a href="#"><img src="<?php echo base_url(); ?>private/post/<?php echo $row->image_name ;?>" alt="<?php echo $row->title_ar; ?>" /></a>
+                                    <a href="<?php echo base_url(); ?>private/post/<?php echo $row->image_name ;?>" class="popup-icon">
+                                        <span class="fa fa-expand"></span>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <span class="fa fa-plus"></span>
+                                    </a> 
+                                </div>
+                            </article>
+                        </li>
+                   <?php  } ?>   
+                    </ul>
                         <!-- portfolio-list-item -->
                     </div>
                 </div>

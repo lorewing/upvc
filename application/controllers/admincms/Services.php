@@ -462,7 +462,7 @@
 			
 			$data['site_title'] = "View Post";	
 			$data['post'] = $this->data_model->postSection();
-			$this->load->view('admincms/services/view_services', $data);
+			$this->load->view('admincms/services/view_services_section', $data);
 
 			} // end function view_services
 			
